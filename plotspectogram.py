@@ -2,7 +2,7 @@ import librosa
 import matplotlib.pyplot as plt
 import numpy as np
 
-pathname = "SmithBechwati-quick_brown_fox-chirp.wav"
+pathname = "EncountersOfTheThirdKind.wav"
 data, sampling_rate = librosa.load("Sound Recordings/" + pathname, sr = 44100)
 
 freq = librosa.amplitude_to_db(np.abs(librosa.stft(data)), ref=np.max)

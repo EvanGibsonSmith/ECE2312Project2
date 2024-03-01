@@ -19,9 +19,9 @@ else:
 #Adding Sine Tone
 pathname3 = "SmithBechwati-sinetone.wav"
 data3, sampling_rate3 = librosa.load(rootFolder + pathname3, sr = 44100)
-outPathname2 = "SmithBechwati-quick_brown_fox_sinetone.wav"
+outPathname3 = "SmithBechwati-quick_brown_fox_sinetone.wav"
 if (sampling_rate1!=sampling_rate2):
     print("Sampling Rates are not equal!")
 
 else:
-    write(rootFolder + outPathname2, sampling_rate1, data1+data2)
+    write(rootFolder + outPathname3, sampling_rate1, data1+data3)

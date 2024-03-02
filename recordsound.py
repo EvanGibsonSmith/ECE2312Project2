@@ -8,9 +8,9 @@ def sinSignal(x):
 
 def chirpSignal(x):
     freq = (8000/5)*x # line equation corresponding to a line between 0 hz and 8000 hz from time 0 to 5
-    return np.sin(freq*2*np.pi*x)
+    return np.sin(freq*np.pi*x)
 
-pathname = "SmithBechwati-sinetone.wav"
+pathname = "SmithBechwati-chirp.wav"
 # Define Sampling Rate or Frequency in HzW
 sr = 44100
 
@@ -20,7 +20,7 @@ duration = 5
 # Start audio recording
 timesteps = np.linspace(0, 5, num=5*sr)
 print(timesteps)
-recording = np.array([sinSignal(x) for x in timesteps]).astype(np.float32)
+recording = np.array([chirpSignal(x) for x in timesteps]).astype(np.float32)
 
 plt.plot(recording)
 plt.show()

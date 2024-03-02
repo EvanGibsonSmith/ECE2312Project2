@@ -12,10 +12,10 @@ rootFolder = "Sound Recordings/"
 pathname1 = "SmithBechwati-quick_brown_fox_chirp.wav"
 data1, sampling_rate1 = librosa.load(rootFolder + pathname1, sr = 44100)
 
-sos1 = signal.butter(order, 2000, btype='low', analog=False, output='sos', fs=sampling_rate1)
+sos1 = signal.butter(order, fc, btype='low', analog=False, output='sos', fs=sampling_rate1)
 filtered1 = signal.sosfiltfilt(sos1, data1)
 
-outPathname1 = "SmithBechwati-filteredspeechchirp-2000HzLowcutoff.wav"
+outPathname1 = "SmithBechwati-filteredspeechchirp.wav"
 write(rootFolder + outPathname1, sampling_rate1, filtered1.astype(np.float32))
 
 # Filtering Chirp Sound, attempting band pass (doesn't work very well)
